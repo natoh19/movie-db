@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;400&display=swap');
+
+body {
+  font-family: 'Kantumruy, sans-serif';
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-grid {
+  display: grid;
+  grid-gap: 17px;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  padding: 0 1em;
+  align-items: stretch;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+ .movie-modal {
+  display: flex;
+  gap: 2em;
+}
+
+.movie-modal-container {
+  background: white;
+  padding: 1em;
+  max-width: 42em;
+  margin: 14em auto;
+  outline: 1px solid black;
+  box-shadow: .5em .6em gray;
+}
+
+.modal-btn{
+  padding:0.35em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  text-decoration: none;
   color: white;
+  font-weight: bold;
+  background-color: darkgray;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-btn:hover {
+  background-color: rgb(14, 9, 9);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-close-btn-container {
+  margin: 1em auto;
+}
+
+.modal-close-btn{
+  padding: .7em 2em;
+}
+
+.search-wrapper {
+  display: block;
+  position: sticky;
+  top: 0;
+}
+
+.search-bar {
+  width: 100%;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.974);
+  padding: 5px 10px;
+  position: sticky;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
