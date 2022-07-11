@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export const SearchBar = ({handleSearch}) => {
 
     const handleChange = (e) => {

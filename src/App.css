@@ -15,6 +15,24 @@ body {
   align-items: stretch;
 }
 
+.pagination-pages {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+.pagination-list {
+  list-style-type: none;
+  outline: .1em solid;
+  margin: 0 .5em;
+}
+
+.pagination-links {
+  padding: .5em;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
 .movie-div {
   display: flex;
   flex-direction: column;

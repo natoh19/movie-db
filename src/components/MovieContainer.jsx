@@ -3,9 +3,6 @@ import Modal from 'react-modal';
 const API_IMAGE = "https://image.tmdb.org/t/p/w200"
 
 Modal.setAppElement('#root')
-// This is needed so screen readers don't see main content when modal is opened
-// to properly hide your application from screenreaders and other assistive technologies
-// while the modal is open
 
 const MovieContainer = ({title, poster_path, release_date, overview}) => {
 
@@ -24,15 +21,11 @@ const MovieContainer = ({title, poster_path, release_date, overview}) => {
         }
         src={src}/> : "Poster Not Available"
 
-    const modalImage =  poster_path ? <img alt={
-        `${title} ${year}`
-    }
-    src={src}/> : ""
+    const modalImage = poster_path ? <img alt={
+            `${title} ${year}`
+        }
+        src={src}/> : ""
 
-    //using two variables here for the two images used in app. Inside modal and inside grid. In modal case want empty
-    //so made empty string if no poser_path returned from api.
-    //in case of grid, believe better to have some generic text. Api occasionally sends back null for poaster_path
-    //accounting for how to handle this situation.
 
     return (
         <div className="movie-div">
@@ -59,7 +52,7 @@ const MovieContainer = ({title, poster_path, release_date, overview}) => {
 
             <Modal isOpen={modelIsOpen}
                 className="movie-modal-container"
-                //onRequestClose to close modal on overlay click and use of esc key.
+
                 onRequestClose={
                     () => setModelIsOpen(false)
             }>
@@ -87,3 +80,4 @@ const MovieContainer = ({title, poster_path, release_date, overview}) => {
 
 
 export default MovieContainer;
+
