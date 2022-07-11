@@ -6,7 +6,8 @@ import useDebounce from './components/useDebounce';
 import Pagination from './components/Pagination';
 import Movies from './components/Movies';
 
-const API_SEARCH_EXAMPLE = `https://api.themoviedb.org/3/movie/popular?api_key=d4b11212772b1939cf5b0072fae2d28a&language=en-US&page=1&adult=false`
+const CLIENT_ID=`${process.env.REACT_APP_MOVIE_DB_KEY}`;
+const API_SEARCH_EXAMPLE = `https://api.themoviedb.org/3/movie/popular?api_key=${CLIENT_ID}&language=en-US&page=1&adult=false`
 
 function App() {
     const [movies, setMovies] = useState([])
@@ -23,7 +24,7 @@ function App() {
 
     const fetchMovies = async (value) => {
       try {
-          const uri = value ? `https://api.themoviedb.org/3/search/movie?api_key=a99cc60fc2b34dbb18cb806b8a88ed14&language=en&adult=false&query=${value}` : API_SEARCH_EXAMPLE;
+          const uri = value ? `https://api.themoviedb.org/3/search/movie?api_key=${CLIENT_ID}&language=en&adult=false&query=${value}` : API_SEARCH_EXAMPLE;
           const result = await fetch(uri)
           if (!result.ok) {
               console.log("Error could not be found")
