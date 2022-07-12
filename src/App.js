@@ -56,8 +56,9 @@ function App() {
     const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie)
 
     return (
+      <div>
+        <SearchBar handleSearch={handleUserInput}/>
         <div className="container">
-            <SearchBar handleSearch={handleUserInput}/>
             <Movies movies={currentMovies}
                 loading={loading}/>
             <Pagination moviesPerPage={moviesPerPage}
@@ -65,6 +66,7 @@ function App() {
                     movies.length
                 }
                 paginAte={paginAte}/>
+        </div>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Modal from 'react-modal';
+import '../App.css'
 const API_IMAGE = "https://image.tmdb.org/t/p/w200"
 
 Modal.setAppElement('#root')
@@ -29,7 +30,10 @@ const MovieContainer = ({title, poster_path, release_date, overview}) => {
 
     return (
         <div className="movie-div">
-            <h3> {title}</h3>
+            <div className="movie-title-container">
+                <h3> {title}</h3>
+            </div>
+
             <div> {gridImage}</div>
 
             <div className="movie-info">
@@ -80,4 +84,3 @@ const MovieContainer = ({title, poster_path, release_date, overview}) => {
 
 
 export default MovieContainer;
-
