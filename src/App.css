@@ -10,7 +10,6 @@ body {
 
 .movie-grid {
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
   padding: 3.24em;
   align-items: stretch;
